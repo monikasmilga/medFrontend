@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-
+import {Post} from '../../../post.interface';
+import {PostService} from '../../../post.services';
 import {Response} from '@angular/http';
-import {PostService} from "../../../post.services";
-import {Post} from "../../../post.interface";
 
 @Component({
   selector: 'app-all-posts',

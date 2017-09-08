@@ -10,6 +10,7 @@ import {routing} from './app.routing';
 import {UserService} from './user.services';
 import { AllPostsComponent } from './admin/posts/all-posts/all-posts.component';
 import { PostComponent } from './admin/posts/post/post.component';
+import {PostService} from "./post.services";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { PostComponent } from './admin/posts/post/post.component';
     AllUsersComponent,
     UserComponent,
     AllPostsComponent,
-    PostComponent
+    PostComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,7 @@ import { PostComponent } from './admin/posts/post/post.component';
     HttpModule,
     routing,
   ],
-  providers: [UserService],
+  providers: [UserService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
