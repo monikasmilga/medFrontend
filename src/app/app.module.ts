@@ -8,12 +8,16 @@ import { AllUsersComponent } from './admin/users/all-users/all-users.component';
 import { UserComponent } from './admin/users/user/user.component';
 import {routing} from './app.routing';
 import {UserService} from './user.services';
+import { AllPostsComponent } from './admin/posts/all-posts/all-posts.component';
+import { PostComponent } from './admin/posts/post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AllUsersComponent,
-    UserComponent
+    UserComponent,
+    AllPostsComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
