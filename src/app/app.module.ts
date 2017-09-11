@@ -10,9 +10,10 @@ import {routing} from './app.routing';
 import {UserService} from './user.services';
 import { AllPostsComponent } from './admin/posts/all-posts/all-posts.component';
 import { PostComponent } from './admin/posts/post/post.component';
-import {PostService} from "./post.services";
+import {PostService} from './post.services';
 import { SigninComponent } from './admin/auth/signin/signin.component';
 import { SignoutComponent } from './admin/auth/signout/signout.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { SignoutComponent } from './admin/auth/signout/signout.component';
     HttpModule,
     routing,
   ],
-  providers: [UserService, PostService],
+  providers: [UserService, PostService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
