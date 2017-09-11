@@ -14,6 +14,7 @@ import {PostService} from './post.services';
 import { SigninComponent } from './admin/auth/signin/signin.component';
 import { SignoutComponent } from './admin/auth/signout/signout.component';
 import { AuthService } from './auth.service';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AuthService } from './auth.service';
     PostComponent,
     SigninComponent,
     SignoutComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
