@@ -22,9 +22,9 @@ export class AddUserComponent implements OnInit {
             form.value.first_name,
             form.value.last_name,
             form.value.email,
-            form.value.password,
             form.value.position,
-            form.value.role_id
+            form.value.role_id,
+            form.value.password
         ).subscribe(
             response => this.router.navigate(['admin/users']),
             error => console.log(error)

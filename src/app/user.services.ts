@@ -22,19 +22,19 @@ export class UserService {
 
     createUser(first_name: string,
                last_name: string,
-               role_id: number,
-               position: string,
                email: string,
+               position: string,
+               role_id: number,
                password: string) {
         const token = this.authService.getToken();
         return this.http.post('http://medapp.dev/api/users?token=' + token,
             {
-                email: email,
-                password: password,
                 first_name: first_name,
                 last_name: last_name,
+                email: email,
+                position: position,
                 role_id: role_id,
-                position: position},
+                password: password},
             {headers: new Headers({'X-Requested-With': 'XMLHttpRequest'})}
         ).map(
             (response: Response) => {
