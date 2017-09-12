@@ -34,12 +34,18 @@ export class UserService {
                 email: email,
                 position: position,
                 role_id: role_id,
-                password: password},
+                password: password
+            },
             {headers: new Headers({'X-Requested-With': 'XMLHttpRequest'})}
         ).map(
             (response: Response) => {
                 return true;
             }
         );
+    }
+
+    deleteUser(id: any) {
+        const token = this.authService.getToken();
+        return this.http.delete('http://medapp.dev/api/users/' + id + '?token=' + token);
     }
 }

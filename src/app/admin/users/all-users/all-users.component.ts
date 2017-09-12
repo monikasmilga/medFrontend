@@ -21,4 +21,10 @@ export class AllUsersComponent implements OnInit {
         (users: User[]) => this.users = users, (error: Response) => console.log(error),
     );
   }
+  delete(id: any) {
+    var result = confirm('Are you sure?');
+    if (result) {
+      this.userService.deleteUser(id);
+    }
+  }
 }
