@@ -58,7 +58,7 @@ export class UserService {
     updateUser(user: User) {
         const token = this.authService.getToken();
         return this.http.put('http://medapp.dev/api/users/' + user.id + '?token=' + token,
-            {user},
+            JSON.stringify(user),
             {headers: new Headers({'Content-type': 'application/json'})}
         ).map(
             (response: Response) => response.json()

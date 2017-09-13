@@ -10,7 +10,9 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
-  private user: User = new User();
+
+  public user: User = new User();
+
   constructor(
       private userService: UserService,
       private formBuilder: FormBuilder,
@@ -18,7 +20,7 @@ export class EditUserComponent implements OnInit {
       private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    let params: any = this.activatedRoute.snapshot.params;
+    const params: any = this.activatedRoute.snapshot.params;
     this.userService.getUser(params.id).
         subscribe(
             user => this.user = user,
@@ -26,7 +28,9 @@ export class EditUserComponent implements OnInit {
     );
   }
   public onUpdate(event: any) {
-    this.userService.updateUser(this.user);
-    this.router.navigate(['admin/users']);
+    this.userService.updateUser(this.user).
+    subscribe(user => this.router.navigate(['admin/users']),
+        error => console.log(error)
+    );
   }
 }
