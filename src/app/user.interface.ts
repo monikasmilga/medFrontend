@@ -1,7 +1,7 @@
-export interface User{
-    id:string;
-    first_name:string;
-    last_name:string;
-    email:string;
-    position:string;
+export class User {
+    public id: string;
+    public first_name: string;
+    public last_name: string;
+    public email: string;
+    public position: string;
 }
