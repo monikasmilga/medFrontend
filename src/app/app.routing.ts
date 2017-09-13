@@ -9,6 +9,8 @@ import {AllPostsComponent} from './admin/posts/all-posts/all-posts.component';
 import {AuthGuardService} from './auth-guard.service';
 import {AddUserComponent} from './admin/users/add-user/add-user.component';
 import {EditUserComponent} from './admin/users/edit-user/edit-user.component';
+import {AddPostComponent} from './admin/posts/add-post/add-post.component';
+import {EditPostComponent} from './admin/posts/edit-post/edit-post.component';
 
 const APP_ROUTES: Routes = [
     {path: 'admin/login', component: SigninComponent},
@@ -17,6 +19,8 @@ const APP_ROUTES: Routes = [
     {path: 'admin/add-user', component: AddUserComponent, canActivate: [AuthGuardService]},
     {path: 'admin/edit-user', component: EditUserComponent, canActivate: [AuthGuardService]},
     {path: 'admin/posts', component: AllPostsComponent, canActivate: [AuthGuardService]},
+    {path: 'admin/add-post', component: AddPostComponent, canActivate: [AuthGuardService]},
+    {path: 'admin/edit-post', component: EditPostComponent, canActivate: [AuthGuardService]},
     {path: 'admin/logout', component: SignoutComponent, canActivate: [AuthGuardService]},
 ];
 

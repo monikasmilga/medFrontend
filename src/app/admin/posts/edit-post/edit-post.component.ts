@@ -1,19 +1,19 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from '../../../user.interface';
-import {UserService} from '../../../user.services';
+import {Post} from '../../../post.interface';
+import {PostService} from '../../../post.services';
 import {FormBuilder} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-    selector: 'app-edit-user',
-    templateUrl: './edit-user.component.html',
-    styleUrls: ['./edit-user.component.css']
+    selector: 'app-edit-post',
+    templateUrl: './edit-post.component.html',
+    styleUrls: ['./edit-post.component.css']
 })
-export class EditUserComponent implements OnInit {
+export class EditPostComponent implements OnInit {
 
-    public user: User = new User();
+    public post: Post = new Post();
 
-    constructor(private userService: UserService,
+    constructor(private postService: PostService,
                 private formBuilder: FormBuilder,
                 private router: Router,
                 private activatedRoute: ActivatedRoute) {
@@ -21,14 +21,14 @@ export class EditUserComponent implements OnInit {
 
     ngOnInit() {
         const params: any = this.activatedRoute.snapshot.params;
-        this.userService.getUser(params.id).subscribe(
-            user => this.user = user,
+        this.postService.getPost(params.id).subscribe(
+            post => this.post = post,
             error => console.log(error)
         );
     }
 
     public onUpdate(event: any) {
-        this.userService.updateUser(this.user).subscribe(user => this.router.navigate(['admin/users']),
+        this.postService.updatePost(this.post).subscribe(post => this.router.navigate(['admin/posts']),
             error => console.log(error)
         );
     }

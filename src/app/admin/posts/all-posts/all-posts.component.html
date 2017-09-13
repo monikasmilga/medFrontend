@@ -1,12 +1,36 @@
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <h1>Posts</h1>
-  </div>
-  <div class="panel-body">
-    <!--<button type="button" (click)="onGetUsers()" class="btn btn-default" name="button">-->
-    <!--Get users</button>-->
-    <a href="/admin/posts/new-post">+ Add Post</a>
-    <hr>
-    <app-post *ngFor="let post of posts" [post]="post"></app-post>
-  </div>
+    <div class="panel-heading">
+        <h4>Posts</h4>
+        <div class="add-button-top pull-right">
+            <button routerLink="../add-post" type="button" class="btn btn-success" name="button">+ Add post</button>
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <table class="table">
+            <tr>
+                <th>Post ID</th>
+                <th>Title</th>
+                <th>Text</th>
+
+            </tr>
+            <tr *ngFor="let post of posts">
+                <td>
+                    {{post.id}}
+                </td>
+                <td>
+                    {{post.title}}
+                </td>
+                <td>
+                    {{post.text}}
+                </td>
+                <td>
+                    <button [routerLink]="['../edit-post', {id: post.id}]" type="button" class="btn btn-info btn-sm"
+                            name="button"><span class="glyphicon glyphicon-edit"></span></button>
+                    <button (click)="onDelete(post)" type="button" class="btn btn-danger btn-sm" name="button"><span
+                            class="glyphicon glyphicon-trash"></span></button>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
