@@ -1,23 +1,23 @@
 <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
         <div class="panel-heading">
-            Add new post
+            <h4>{{ title }}</h4>
         </div>
         <div class="panel-body">
-            <form (ngSubmit)="onCreate(f)" #f="ngForm">
+            <form [formGroup]="form" (ngSubmit)="onSave(f)" #f="ngForm">
 
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input class="form-control" type="text" id="title" name="title" value="" ngModel required>
+                    <input class="form-control" type="text" id="title" name="title" value="" [(ngModel)]="post.title" formControlName="title">
                 </div>
 
                 <div class="form-group">
                     <label for="text">Text</label>
-                    <input class="form-control" type="text" id="text" name="text" value="" ngModel required>
+                    <input class="form-control" type="text" id="text" name="text" value="" [(ngModel)]="post.text" formControlName="text">
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" [disabled]="!f.valid" class="btn btn-success" name="'button">Create post
+                    <button type="submit" class="btn btn-success" name="'button">{{ title }}
                     </button>
                 </div>
             </form>

@@ -10,6 +10,8 @@ import {AdminModule} from './admin/admin.module';
 import {adminRouting} from './admin/admin.routing';
 import {UsersModule} from './admin/users/users.module';
 import {usersRouting} from './admin/users/users.routing';
+import {postsRouting} from "./admin/posts/posts.routing";
+import {PostsModule} from "./admin/posts/posts.module";
 
 @NgModule({
     declarations: [
@@ -26,7 +28,9 @@ import {usersRouting} from './admin/users/users.routing';
         AdminModule,
         adminRouting,
         UsersModule,
+        PostsModule,
         usersRouting,
+        postsRouting,
     ],
     providers: [],
     bootstrap: [AppComponent]
