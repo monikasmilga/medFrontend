@@ -2,11 +2,11 @@ import {Injectable} from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs';
-import {AuthService} from './auth.service';
-import {User} from './user.interface';
+import {User} from './user';
+import {AuthService} from '../../auth.service';
 
 @Injectable()
-export class UserService {
+export class UsersService {
     constructor(private http: Http, private authService: AuthService) {
 
     }
@@ -31,34 +31,18 @@ export class UserService {
             );
     }
 
-    createUser(first_name: string,
-               last_name: string,
-               email: string,
-               position: string,
-               role_id: number,
-               password: string) {
+    createUser(user) {
         const token = this.authService.getToken();
         return this.http.post('http://medapp.dev/api/users?token=' + token,
-            {
-                first_name: first_name,
-                last_name: last_name,
-                email: email,
-                position: position,
-                role_id: role_id,
-                password: password
-            },
-            {headers: new Headers({'X-Requested-With': 'XMLHttpRequest'})}
-        ).map(
-            (response: Response) => {
-                return true;
-            }
+            user, { headers: new Headers({'X-Requested-With': 'XMLHttpRequest'})}).map(
+            (response: Response) => response.json()
         );
     }
 
-    updateUser(user: User) {
+    updateUser(user) {
         const token = this.authService.getToken();
         return this.http.put('http://medapp.dev/api/users/' + user.id + '?token=' + token,
-            JSON.stringify(user),
+            user,
             {headers: new Headers({'Content-type': 'application/json'})}
         ).map(
             (response: Response) => response.json()

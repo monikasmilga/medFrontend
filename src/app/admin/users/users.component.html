@@ -1,8 +1,8 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h4>Users</h4>
+        <h4>Displaying {{ users.length}} <b>user(s).</b></h4>
         <div class="add-button-top pull-right">
-            <button routerLink="../add-user" type="button" class="btn btn-success" name="button">+ Add user</button>
+            <button routerLink="/admin/users/new" type="button" class="btn btn-success" name="button">+ Add user</button>
         </div>
     </div>
 
@@ -33,7 +33,8 @@
                     {{user.position}}
                 </td>
                 <td>
-                    <button [routerLink]="['../edit-user', {id: user.id}]" type="button" class="btn btn-info btn-sm" name="button"><span class="glyphicon glyphicon-edit"></span></button> <button (click)="onDelete(user)" type="button" class="btn btn-danger btn-sm" name="button"><span class="glyphicon glyphicon-trash"></span></button>
+                    <button [routerLink]="['/admin/users', user.id]" type="button" class="btn btn-info btn-sm" name="button"><span class="glyphicon glyphicon-edit"></span></button>
+                    <button (click)="onDelete(user)" type="button" class="btn btn-danger btn-sm" name="button"><span class="glyphicon glyphicon-trash"></span></button>
                 </td>
             </tr>
         </table>
