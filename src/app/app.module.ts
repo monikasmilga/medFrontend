@@ -4,14 +4,16 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {routing} from './app.routing';
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import {HomeComponent } from './home/home.component';
+import {NotFoundComponent } from './not-found/not-found.component';
 import {AdminModule} from './admin/admin.module';
 import {adminRouting} from './admin/admin.routing';
 import {UsersModule} from './admin/users/users.module';
 import {usersRouting} from './admin/users/users.routing';
-import {postsRouting} from "./admin/posts/posts.routing";
-import {PostsModule} from "./admin/posts/posts.module";
+import {postsRouting} from './admin/posts/posts.routing';
+import {PostsModule} from './admin/posts/posts.module';
+import {RolesModule} from './admin/roles/roles.module';
+import {rolesRouting} from './admin/roles/roles.routing';
 
 @NgModule({
     declarations: [
@@ -29,6 +31,8 @@ import {PostsModule} from "./admin/posts/posts.module";
         adminRouting,
         UsersModule,
         PostsModule,
+        RolesModule,
+        rolesRouting,
         usersRouting,
         postsRouting,
     ],

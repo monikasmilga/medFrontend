@@ -9,7 +9,7 @@ import {SigninComponent} from './auth/signin/signin.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthService} from './auth.service';
 import {AuthGuardService} from './auth-guard.service';
-import { PostFormComponent } from './posts/post-form/post-form.component';
+
 
 
 @NgModule({
@@ -24,8 +24,6 @@ import { PostFormComponent } from './posts/post-form/post-form.component';
         NavBarComponent,
         SigninComponent,
         DashboardComponent,
-        // SharedComponent,
-        // PostFormComponent,
     ],
     exports: [
         NavBarComponent, SigninComponent

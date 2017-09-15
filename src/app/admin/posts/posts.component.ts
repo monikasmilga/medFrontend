@@ -11,13 +11,13 @@ import {Response} from '@angular/http';
 
 export class PostsComponent implements OnInit {
 
-    private posts: Post[] = [];
+    public posts: Post[] = [];
 
-    constructor(private postService: PostsService) {
+    constructor(private postsService: PostsService) {
     }
 
     ngOnInit() {
-        this.postService.getPosts().subscribe(
+        this.postsService.getPosts().subscribe(
             posts => this.posts = posts
         );
     }
@@ -27,7 +27,7 @@ export class PostsComponent implements OnInit {
             const index = this.posts.indexOf(post);
             this.posts.splice(index, 1);
 
-            this.postService.deletePost(post.id)
+            this.postsService.deletePost(post.id)
                 .subscribe(null,
                     error => {
                         alert('Could not delete post');

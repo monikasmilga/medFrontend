@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from './shared/user';
-import {Response} from '@angular/http';
 import {UsersService} from './shared/users.service';
 
 @Component({
@@ -11,13 +10,13 @@ import {UsersService} from './shared/users.service';
 
 export class UsersComponent implements OnInit {
 
-  private users: User[] = [];
+  public users: User[] = [];
 
-  constructor(private userService: UsersService) {
+  constructor(private usersService: UsersService) {
   }
 
   ngOnInit() {
-    this.userService.getUsers().subscribe(
+    this.usersService.getUsers().subscribe(
         users => this.users = users
     );
   }
@@ -27,7 +26,7 @@ export class UsersComponent implements OnInit {
       const index = this.users.indexOf(user);
       this.users.splice(index, 1);
 
-      this.userService.deleteUser(user.id)
+      this.usersService.deleteUser(user.id)
           .subscribe(null,
               error => {
             alert('Could not delete user.');

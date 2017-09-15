@@ -3,6 +3,8 @@ import {User} from '../shared/user';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UsersService} from '../shared/users.service';
+import {Role} from "../../roles/shared/role";
+import {RolesService} from "../../roles/shared/roles.service";
 
 @Component({
     selector: 'app-user-form',
@@ -16,11 +18,14 @@ export class UserFormComponent implements OnInit {
     title: string;
     user: User = new User();
     showPassword: boolean;
+    public roles: Role[] = [];
 
     constructor(formBuilder: FormBuilder,
                 private router: Router,
                 private activatedRoute: ActivatedRoute,
-                private usersService: UsersService, ) {
+                private usersService: UsersService,
+                private rolesService: RolesService) {
+
         this.form = formBuilder.group({
             first_name: ['', [
                 Validators.required,
