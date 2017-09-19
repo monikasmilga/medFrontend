@@ -1,4 +1,9 @@
-<app-nav-bar></app-nav-bar>
+<!--user nav bar-->
+<app-menu *ngIf="!isAdminNavBar()"></app-menu>
+
+<!--admin nav ba-->
+<app-nav-bar *ngIf="isAdminNavBar()"></app-nav-bar>
+
 
 <div id="app">
     <div class="container">

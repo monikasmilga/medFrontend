@@ -14,12 +14,26 @@ import {postsRouting} from './admin/posts/posts.routing';
 import {PostsModule} from './admin/posts/posts.module';
 import {RolesModule} from './admin/roles/roles.module';
 import {rolesRouting} from './admin/roles/roles.routing';
+import { BlogComponent } from './blog/blog.component';
+import { AboutComponent } from './about/about.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { MenuComponent } from './menu/menu.component';
+import {contactsRouting} from './contacts/contacts.routing';
+import {homeRouting} from './home/home.routing';
+import {registrationRouting} from './registration/registration.routing';
+import {blogRouting} from './blog/blog.routing';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         NotFoundComponent,
+        BlogComponent,
+        AboutComponent,
+        ContactsComponent,
+        RegistrationComponent,
+        MenuComponent,
     ],
     imports: [
         BrowserModule,
@@ -35,6 +49,10 @@ import {rolesRouting} from './admin/roles/roles.routing';
         rolesRouting,
         usersRouting,
         postsRouting,
+        contactsRouting,
+        homeRouting,
+        registrationRouting,
+        blogRouting,
     ],
     providers: [],
     bootstrap: [AppComponent]

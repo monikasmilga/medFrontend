@@ -9,6 +9,7 @@ import {SigninComponent} from './auth/signin/signin.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthService} from './auth.service';
 import {AuthGuardService} from './auth-guard.service';
+import {MultiselectDropdownModule} from "angular-2-dropdown-multiselect";
 
 
 
@@ -18,7 +19,8 @@ import {AuthGuardService} from './auth-guard.service';
         FormsModule,
         ReactiveFormsModule,
         RouterModule,
-        HttpModule
+        HttpModule,
+        MultiselectDropdownModule,
     ],
     declarations: [
         NavBarComponent,

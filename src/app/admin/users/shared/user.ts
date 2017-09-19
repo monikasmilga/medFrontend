@@ -6,4 +6,5 @@ export class User {
     position: string;
     role_id: string;
     password: string;
+    roles: any;
 }
