@@ -5,7 +5,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {UsersService} from '../shared/users.service';
 import {Role} from '../../roles/shared/role';
 import {RolesService} from '../../roles/shared/roles.service';
-
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 
 @Component({
@@ -19,10 +18,9 @@ export class UserFormComponent implements OnInit {
     form: FormGroup;
     title: string;
     user: User = new User();
-    showPassword: boolean;
-    roles: Role[] = [];
-
     userRoles: string[] = [];
+    roles: Role[] = [];
+    showPassword: boolean;
 
     constructor(formBuilder: FormBuilder,
                 private router: Router,
@@ -60,8 +58,8 @@ export class UserFormComponent implements OnInit {
             (error: Response) => console.log(error)
         );
 
-        let id = this.activatedRoute.params.subscribe(params => {
-            let id = params['id'];
+        var id = this.activatedRoute.params.subscribe(params => {
+            var id = params['id'];
 
             this.title = id ? 'Edit User' : 'New user';
             // if(id){
@@ -75,11 +73,11 @@ export class UserFormComponent implements OnInit {
             this.usersService.getUser(id).subscribe(
                 user => {
                     this.user = user;
-                    for (let i = 0, length = this.user.roles.length; i < length; i++) {
+                    for (var i = 0, length = this.user.roles.length; i < length; i++) {
                         this.userRoles.push(this.user.roles[i].id.toString());
                     }
-
-                }, response => {
+                },
+                response => {
                     if (response.status === 404) {
                         this.router.navigate(['Not Found']);
                     }
@@ -91,12 +89,13 @@ export class UserFormComponent implements OnInit {
         }
     }
 
-    onChange(event: any) {
-        console.log(event);
+    onChange(e: any) {
+        console.log(e);
     }
 
     onSave() {
-        var result, user = this.form.value;
+        var result = this.form.value;
+        var user = this.form.value;
         if (this.user.id) {
             user.id = this.user.id;
             result = this.usersService.updateUser(user);
