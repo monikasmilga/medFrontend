@@ -1,0 +1,19 @@
+<div class="blog">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title" >Post by: {{post.user_name['first_name']}}{{'  '}}{{post.user_name['last_name']}}</h3>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <h6>Add on:<br>{{post.created_at |date : 'MMMM d, y'}}</h6>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{post.title}}</h3>
+  </div>
+
+</div>
+<div class="panel-body">
+  {{post.text}}
+</div>

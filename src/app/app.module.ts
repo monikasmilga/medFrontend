@@ -19,10 +19,11 @@ import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { MenuComponent } from './menu/menu.component';
-import {contactsRouting} from './contacts/contacts.routing';
 import {homeRouting} from './home/home.routing';
 import {registrationRouting} from './registration/registration.routing';
 import {blogRouting} from './blog/blog.routing';
+import { BlogPostsComponent } from './blog/blog-posts/blog-posts.component';
+import {BlogModule} from "./blog/blog.module";
 
 @NgModule({
     declarations: [
@@ -34,6 +35,7 @@ import {blogRouting} from './blog/blog.routing';
         ContactsComponent,
         RegistrationComponent,
         MenuComponent,
+        BlogPostsComponent,
     ],
     imports: [
         BrowserModule,
@@ -49,10 +51,10 @@ import {blogRouting} from './blog/blog.routing';
         rolesRouting,
         usersRouting,
         postsRouting,
-        contactsRouting,
         homeRouting,
         registrationRouting,
         blogRouting,
+        BlogModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

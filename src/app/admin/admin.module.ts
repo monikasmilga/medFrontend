@@ -9,7 +9,8 @@ import {SigninComponent} from './auth/signin/signin.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthService} from './auth.service';
 import {AuthGuardService} from './auth-guard.service';
-import {MultiselectDropdownModule} from "angular-2-dropdown-multiselect";
+import {MultiselectDropdownModule} from 'angular-2-dropdown-multiselect';
+import {MenuComponent} from '../menu/menu.component';
 
 
 
@@ -28,7 +29,7 @@ import {MultiselectDropdownModule} from "angular-2-dropdown-multiselect";
         DashboardComponent,
     ],
     exports: [
-        NavBarComponent, SigninComponent
+        NavBarComponent, SigninComponent,
     ],
     providers: [
         AuthService, AuthGuardService
