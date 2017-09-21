@@ -16,9 +16,9 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a routerLink="registration">Registration</a></li>
-                <li><a routerLink="blog">Blog</a></li>
-                <li><a routerLink="about">About</a></li>
+                <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a routerLink="registration">Registration</a></li>
+                <li [routerLinkActive]="['active']"><a routerLink="blog">Blog</a></li>
+                <li [routerLinkActive]="['active']"><a routerLink="about">About</a></li>
                 <li><a routerLink="contacts">Contacts</a></li>
                 <li><a routerLink="admin/login">Login</a></li>
 

@@ -1,13 +1,16 @@
+
 import {RouterModule, Routes} from '@angular/router';
 
 
 import {BlogComponent} from './blog.component';
-import {BlogPostsComponent} from './blog-posts/blog-posts.component';
+import {BlogPostComponent} from './blog-post/blog-posts.component';
 
 
 const blogRoutes: Routes = [
-    { path: 'blog', component: BlogComponent},
-    {path: 'blog/:id', component: BlogPostsComponent},
+    {path: 'blog', component: BlogComponent, pathMatch: 'full'},
+    {path: 'blog/:id', component: BlogPostComponent},
+
 ];
 
-export const blogRouting  = RouterModule.forChild(blogRoutes);
+
+export const blogRouting = RouterModule.forChild(blogRoutes);

@@ -1,29 +1,29 @@
+import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {HttpModule} from '@angular/http';
-import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import {CommonModule} from '@angular/common';
-import {BlogPostsComponent} from './blog-posts/blog-posts.component';
+
+import {BlogService} from './shared/blog.service';
+
 import {BlogComponent} from './blog.component';
-import {BlogsService} from "./shared/blogs.service";
 
 
 @NgModule({
     declarations: [
         BlogComponent,
-        BlogPostsComponent,
+
     ],
     imports: [
         CommonModule,
-        HttpModule,
         RouterModule,
-        ReactiveFormsModule,
-        FormsModule,
+        HttpModule,
     ],
+
     exports: [
-        // BlogComponent
+        BlogComponent
     ],
-    providers: [ BlogsService],
+    providers: [BlogService],
 })
 export class BlogModule {
 }

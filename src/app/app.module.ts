@@ -21,21 +21,23 @@ import { RegistrationComponent } from './registration/registration.component';
 import { MenuComponent } from './menu/menu.component';
 import {homeRouting} from './home/home.routing';
 import {registrationRouting} from './registration/registration.routing';
-import {blogRouting} from './blog/blog.routing';
-import { BlogPostsComponent } from './blog/blog-posts/blog-posts.component';
 import {BlogModule} from "./blog/blog.module";
+import {blogRouting} from "./blog/blog.routing";
+import {BlogPostComponent} from "./blog/blog-post/blog-posts.component";
+
+
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         NotFoundComponent,
-        BlogComponent,
+        // BlogComponent,
         AboutComponent,
         ContactsComponent,
         RegistrationComponent,
         MenuComponent,
-        BlogPostsComponent,
+        BlogPostComponent,
     ],
     imports: [
         BrowserModule,

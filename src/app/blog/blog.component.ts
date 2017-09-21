@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {BlogsService} from './shared/blogs.service';
-import {Post} from './shared/blog';
+import {Component, OnInit} from '@angular/core';
 
+import {BlogService} from './shared/blog.service';
+import {Post} from './shared/post';
 
 @Component({
   selector: 'app-blog',
@@ -9,15 +9,17 @@ import {Post} from './shared/blog';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  public posts: Post[] = [];
+  posts: Post[] = [];
 
-  constructor(private blogsService: BlogsService) {
+  constructor(private blogService: BlogService) {
   }
 
   ngOnInit() {
-    this.blogsService.getBlogs().subscribe(
+    this.blogService.getBlogs().subscribe(
         posts => this.posts = posts,
-        (error: Response) => console.log(error),
+        (error: Response) => console.log(error)
     );
+
+    console.log(this.posts);
   }
 }
