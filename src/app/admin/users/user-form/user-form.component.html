@@ -1,4 +1,6 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="side-form">
+
+    <!--<div class="col-md-8 col-md-offset-2">-->
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4>{{ title }}</h4>
@@ -19,7 +21,8 @@
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input class="form-control" type="email" id="email" name="email" value="" [(ngModel)]="user.email"
+                    <input class="form-control" type="email" id="email" name="email" value=""
+                           [(ngModel)]="user.email"
                            formControlName="email">
                 </div>
 
@@ -32,7 +35,8 @@
 
                 <div class="form-group">
                     <label for="roles">Roles</label><br>
-                    <ss-multiselect-dropdown [options]="roles" [(ngModel)]="userRoles" formControlName="roles" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+                    <ss-multiselect-dropdown [options]="roles" [(ngModel)]="userRoles" formControlName="roles"
+                                             (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
                 </div>
 
                 <!--<div class="form-group">-->
@@ -53,10 +57,14 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success" name="'button"> {{ title }}
+                    <button type="submit" class="btn btn-success" name="button"> {{ title }}
+                    </button>
+
+                    <button type="button" class="btn btn-default" name="back" routerLink="/admin/users">Back
                     </button>
                 </div>
             </form>
         </div>
     </div>
+    <!--</div>-->
 </div>

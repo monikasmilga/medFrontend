@@ -6,11 +6,14 @@ import {UsersService} from '../shared/users.service';
 import {Role} from '../../roles/shared/role';
 import {RolesService} from '../../roles/shared/roles.service';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
+import {slideInOutAnimation} from '../../../animations/slide-in-out.animation';
 
 @Component({
     selector: 'app-user-form',
     templateUrl: './user-form.component.html',
-    styleUrls: ['./user-form.component.css']
+    styleUrls: ['./user-form.component.css'],
+    animations: [slideInOutAnimation],
+    host: {'[@slideInOutAnimation]': ''},
 })
 
 export class UserFormComponent implements OnInit {

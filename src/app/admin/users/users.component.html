@@ -1,3 +1,4 @@
+<div class="col-md-12">
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4>Displaying {{ users.length}} <b>user(s).</b></h4>
@@ -41,7 +42,7 @@
                     <span *ngFor="let role of user.roles">{{ role.name }}</span>
                 </td>
                 <td>
-                    <button [routerLink]="['/admin/users', user.id]" type="button" class="btn btn-info btn-sm"
+                    <button [routerLink]="['edit', user.id]" type="button" class="btn btn-info btn-sm"
                             name="button"><span class="glyphicon glyphicon-edit"></span></button>
                     <button (click)="onDelete(user)" type="button" class="btn btn-danger btn-sm" name="button"><span
                             class="glyphicon glyphicon-trash"></span></button>
@@ -49,4 +50,9 @@
             </tr>
         </table>
     </div>
+</div>
+
+<div class="view-side-form">
+    <router-outlet></router-outlet>
+</div>
 </div>

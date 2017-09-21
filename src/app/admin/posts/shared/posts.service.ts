@@ -4,7 +4,7 @@ import 'rxjs/Rx';
 import {Observable} from 'rxjs';
 import {AuthService} from '../../auth.service';
 import {Post} from './post';
-import {GlobalVariable} from "../../../config/global";
+import {GlobalVariable} from '../../../config/global';
 
 @Injectable()
 export class PostsService {
