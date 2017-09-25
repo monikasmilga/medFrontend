@@ -10,11 +10,14 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthService} from './auth.service';
 import {AuthGuardService} from './auth-guard.service';
 import {MultiselectDropdownModule} from 'angular-2-dropdown-multiselect';
-import {MenuComponent} from '../menu/menu.component';
-
-
 
 @NgModule({
+    declarations: [
+        NavBarComponent,
+        SigninComponent,
+        DashboardComponent,
+
+    ],
     imports: [
         CommonModule,
         FormsModule,
@@ -23,11 +26,7 @@ import {MenuComponent} from '../menu/menu.component';
         HttpModule,
         MultiselectDropdownModule,
     ],
-    declarations: [
-        NavBarComponent,
-        SigninComponent,
-        DashboardComponent,
-    ],
+
     exports: [
         NavBarComponent, SigninComponent,
     ],

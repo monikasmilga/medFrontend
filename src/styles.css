@@ -14,3 +14,7 @@
     padding: 20px;
     border-left: 1px solid #e0e0e0;
 }
+
+.hero-spacer{
+    background-image: url("/assets/img/doctorheader.jpg");
+}

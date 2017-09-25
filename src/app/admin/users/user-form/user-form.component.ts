@@ -5,8 +5,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {UsersService} from '../shared/users.service';
 import {Role} from '../../roles/shared/role';
 import {RolesService} from '../../roles/shared/roles.service';
-import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
+import {IMultiSelectOption} from 'angular-2-dropdown-multiselect';
 import {slideInOutAnimation} from '../../../animations/slide-in-out.animation';
+import {AppService} from '../../../shared/app.service';
 
 @Component({
     selector: 'app-user-form',
@@ -29,7 +30,8 @@ export class UserFormComponent implements OnInit {
                 private router: Router,
                 private activatedRoute: ActivatedRoute,
                 private usersService: UsersService,
-                private rolesService: RolesService) {
+                private rolesService: RolesService,
+                private appService: AppService) {
 
         this.form = formBuilder.group({
             first_name: ['', [
@@ -107,7 +109,11 @@ export class UserFormComponent implements OnInit {
         }
 
         result.subscribe(
-            user => this.router.navigate(['admin/users']),
+            user => {
+                this.router.navigate(['admin/users']);
+
+                this.appService.publish('users-updated');
+            },
             error => console.log(error)
         );
     }

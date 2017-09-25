@@ -24,6 +24,9 @@ import {BlogModule} from './blog/blog.module';
 import {blogRouting} from './blog/blog.routing';
 import {BlogPostComponent} from './blog/blog-post/blog-posts.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {scheduleRouting} from './admin/schedule/schedule.routing';
+import {ScheduleModule} from './admin/schedule/schedule.module';
+import {AppService} from './shared/app.service';
 
 
 
@@ -53,13 +56,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         rolesRouting,
         usersRouting,
         postsRouting,
+        scheduleRouting,
+        ScheduleModule,
         homeRouting,
         registrationRouting,
         blogRouting,
         BlogModule,
         BrowserAnimationsModule,
     ],
-    providers: [],
+    providers: [AppService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
