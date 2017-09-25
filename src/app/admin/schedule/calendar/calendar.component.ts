@@ -3,7 +3,7 @@ import {slideInOutAnimation} from '../../../animations/slide-in-out.animation';
 import {User} from '../../users/shared/user';
 import {UsersService} from '../../users/shared/users.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent } from 'angular-calendar';
+import {CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent} from 'angular-calendar';
 
 @Component({
     selector: 'app-calendar',
@@ -50,4 +50,7 @@ export class CalendarComponent implements OnInit {
         });
     }
 
+    dayClicked({date, events}: { date: Date; events: CalendarEvent[] }): void {
+        console.log(date);
+    }
 }
