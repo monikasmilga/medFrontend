@@ -8,12 +8,15 @@
 
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input class="form-control" type="text" id="title" name="title" value="" [(ngModel)]="post.title" formControlName="title">
+                    <input class="form-control" type="text" id="title" name="title" value="" [(ngModel)]="post.title"
+                           formControlName="title">
                 </div>
 
                 <div class="form-group">
                     <label for="text">Text</label>
-                    <input class="form-control" type="text" id="text" name="text" value="" [(ngModel)]="post.text" formControlName="text">
+                    <textarea class="form-control" type="text" id="text" name="text" value="" [(ngModel)]="post.text"
+                              formControlName="text">
+                    </textarea>
                 </div>
 
                 <div class="form-group">

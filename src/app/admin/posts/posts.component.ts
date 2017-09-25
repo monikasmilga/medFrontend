@@ -3,6 +3,8 @@ import {Post} from './shared/post';
 import {PostsService} from './shared/posts.service';
 import {Response} from '@angular/http';
 import {fadeInAnimation} from '../../animations/fade-in.animation';
+import {Subscription} from "rxjs";
+import {AppService} from "../../shared/app.service";
 
 @Component({
     selector: 'app-all-posts',
@@ -16,12 +18,24 @@ export class PostsComponent implements OnInit {
 
     public posts: Post[] = [];
 
-    constructor(private postsService: PostsService) {
+    subscription: Subscription;
+
+    constructor(private postsService: PostsService, private appService: AppService) {
     }
 
     ngOnInit() {
-        this.postsService.getPosts().subscribe(
-            posts => this.posts = posts
+        this.loadPosts();
+
+        this.subscription = this.appService.on('posts-updated')
+            .subscribe(
+                () => this.loadPosts()
+            );
+    }
+
+    loadPosts() {
+        return this.postsService.getPosts().subscribe(
+            posts => this.posts = posts,
+            (error: Response) => console.log(error)
         );
     }
 
